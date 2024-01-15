@@ -6,3 +6,22 @@ function oderCake() {
     quantity: 1,
   };
 }
+
+const initialState = {
+    numOfCakes: 24,
+  };
+  
+  // (previousState, action) => newState
+  
+  const reducer = (state = initialState, action) => {
+    switch (action.type) {
+      case CAKE_ORDERED:
+        return {
+          numOfCakes: state.numOfCakes - 1,
+        };
+  
+      default:
+        return state;
+    }
+  };
+  
